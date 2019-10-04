@@ -1,0 +1,28 @@
+RewriteEngine On
+#url: home.html
+RewriteRule ^home.html$ index.php
+#url: registration.html 
+RewriteRule ^registration.html$ index.php?controller=registration&action=index
+#url: login.html
+RewriteRule ^login.html$ index.php?controller=login&action=index
+#url: logout.html
+RewriteRule ^logout.html$ index.php?controller=login&action=logout
+#url: checkout.html
+RewriteRule ^checkout.html$ index.php?controller=checkout
+#url: shop.html
+RewriteRule ^shop.html$ index.php?controller=product&action=all
+#url: blog.html
+RewriteRule ^blog.html$ index.php?controller=blog&action=all
+#url: info.html
+RewriteRule ^info.html$ index.php?controller=user&action=infoUser
+#url: change-password.html
+RewriteRule ^change-password.html$ index.php?controller=user&action=edit_password
+#url: product/detail/id/tensp -> index.php?controller=product&action=detail&id=$1
+RewriteRule ^(.*)-(.*).html$ index.php?controller=product&action=detail&slug=$1&id=$2
+#url: don-hang
+RewriteRule ^don-hang$ index.php?controller=order&action=index
+
+#------admin
+#url: login
+RewriteRule ^admin.html$ index.php?area=backend&controller=login
+#url: index
